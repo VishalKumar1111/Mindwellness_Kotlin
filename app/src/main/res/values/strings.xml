@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Mindwellness</string>
+    <string name="yoga_benifits">Benefits Of Yoga  1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young</string>
+    <string name="mental_problem">1- Anxiety disorders. \n 2- Behavioural and emotional disorders in children. \n  3- Bipolar affective disorder.\n4- Depression\n5- Addiction\n6- Psychosis</string>
+    <string name="meditation_detail">1- Gaining a new perspective on stressful situations.\n 2- Building skills to manage your stress.  \n  3- Increasing self-awareness. \n  4- Focusing on the present. \n 5- Reducing negative emotions.</string>
+    <string name="connect_doctor">Counsellors work with clients experiencing a wide range of emotional and psychological difficulties to help them bring about effective change and/or enhance their wellbeing. Clients could have issues such as depression, anxiety, stress, loss and relationship difficulties that are affecting their ability to manage life.</string>
+    <string name="calculate_stress">Calculate YOur Stress</string>
+    <string name="stress">Stress</string>
+    <string name="mental">Mental Health</string>
+    <string name="doctor">Doctor</string>
+    <string name="Meditation">Meditation</string>
+
 </resources>

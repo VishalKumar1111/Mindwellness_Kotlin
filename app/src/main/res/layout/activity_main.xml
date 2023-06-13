@@ -4,22 +4,112 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#51DF1919"
+    android:id="@+id/constaint_lay">
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/image_slider"
-        android:layout_width="286dp"
-        android:layout_height="153dp"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
         app:iss_auto_cycle="true"
         app:iss_delay="1000"
         app:iss_period="1000"
         app:iss_text_align="CENTER"
+        app:layout_constraintBottom_toTopOf="@+id/name_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UnknownId">
+
+    </com.denzcoskun.imageslider.ImageSlider>
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:background="#56E12B2B"
+        android:gravity="center"
+        android:text="South africa"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="#56E12B2B"
+        app:layout_constraintBottom_toTopOf="@+id/image_slider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_desciption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="South africa"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold|italic"
+                tools:layout_editor_absoluteX="20dp"
+                tools:layout_editor_absoluteY="390dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="265dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="13dp"
+        android:background="#56E12B2B"
+        android:gravity="center"
+        android:text="South africa"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_image" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
