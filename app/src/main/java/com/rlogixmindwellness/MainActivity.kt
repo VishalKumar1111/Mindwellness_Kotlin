@@ -1,41 +1,47 @@
 package com.rlogixmindwellness
 
-import android.content.ClipData.Item
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.iterator
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.AnimationTypes
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import java.text.FieldPosition
 
 class MainActivity : AppCompatActivity() {
+
     private val imageTitle= mutableListOf("South Africa", "New York" , "USA", "Iceland","Stress","Yoga","Care")
     private val Title= mutableListOf("South Africa", "New York" , "USA", "Iceland","Stress","Yoga","Care")
     private val descTitle= arrayListOf("Benefits Of Yoga \n 1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young",
        " 1- Anxiety disorders.\n 2- Behavioural and emotional disorders in children.\n3- Bipolar affective disorder.\n4- Depression\n5- Addiction\n6- Psychosis","- Gaining a new perspective on stressful situations.\n 2- Building skills to manage your stress.  \n  3- Increasing self-awareness. \n  4- Focusing on the present. \n 5- Reducing negative emotions"
     ,"Counsellors work with clients experiencing a wide range of emotional and psychological difficulties to help them bring about effective change and/or enhance their wellbeing. Clients could have issues such as depression, anxiety, stress, loss and relationship difficulties that are affecting their ability to manage life.",
     "Calculate YOur Stress","Health","Calculate the Stress","Concern To Doctor")
-    private var topicimageList= mutableListOf<Int>(R.drawable.one,R.drawable.twelve,R.drawable.four,R.drawable.fifteen,R.drawable.six,R.drawable.eleven,R.drawable.nine)
+    private var topicimageList= mutableListOf(R.drawable.one,R.drawable.twelve,R.drawable.four,R.drawable.fifteen,R.drawable.six,R.drawable.eleven,R.drawable.sixteen)
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var mainImage:ImageView=findViewById(R.id.main_image)
+        val mainImage:ImageView=findViewById(R.id.main_image)
         val container=findViewById<ConstraintLayout>(R.id.constaint_lay)
         val imageSlider = findViewById<ImageSlider>(R.id.image_slider)
-        var nameTitle=findViewById<TextView>(R.id.name_title)
+        val nameTitle=findViewById<TextView>(R.id.name_title)
         val description=findViewById<TextView>(R.id.name_desciption)
-        val title=findViewById<TextView>(R.id.title)
+        var title=findViewById<TextView>(R.id.title)
+
+        title.text="South Africa"
+        title.setOnClickListener { startActivity(Intent(this@MainActivity,Stress::class.java)) }
+        description.text="Benefits Of Yoga \n 1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young\n"
+        mainImage.setImageResource(R.drawable.one)
 
 
         val imageList = ArrayList<SlideModel>()
@@ -49,24 +55,82 @@ class MainActivity : AppCompatActivity() {
         imageList.add(SlideModel(R.drawable.fifteen,"Look up and smile. But only if you feel like it"))
 
         imageSlider.setImageList(imageList, ScaleTypes.FIT)
-        imageSlider.startSliding(3500)
+        imageSlider.startSliding(1500)
+
 
 
 
         imageSlider.setItemChangeListener(object : ItemChangeListener{
             override fun onItemChanged(position: Int) {
-                when(position){
-                    0 -> title.text=Title[0]
+
+                if (position==1){
+                    title.text[1]
+                    title.setOnClickListener {
+                        startActivity(
+                            Intent(this@MainActivity, Stress::class.java))
+                    }
+                    mainImage.setImageResource(topicimageList[1])
+                    mainImage.setOnClickListener {
+                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                    }
                 }
 
-                for (i in 0 until topicimageList.size) {
-                    mainImage.setImageResource(topicimageList[i])
+                if (position==2) {
+                    title.text = Title[2]
+                    title.setOnClickListener {
+                        startActivity(
+                            Intent(this@MainActivity, Treatment::class.java))
+                    }
+                    mainImage.setImageResource(topicimageList[2])
+                    mainImage.setOnClickListener {
+                        startActivity(Intent(this@MainActivity, Stress::class.java))
+                    }
                 }
+                if (position==3) {
+                    title.text = Title[3]
+                    title.setOnClickListener {
+                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                    }
+                    mainImage.setImageResource(topicimageList[3])
+                    mainImage.setOnClickListener {startActivity(Intent(this@MainActivity, Stress::class.java))
+                    }
+                }
+                if (position==4) {
+                    title.text = Title[4]
+                    title.setOnClickListener {startActivity(Intent(this@MainActivity, Treatment::class.java))
+                    }
+                    description.text=descTitle[4]
+                    description.setOnClickListener{startActivity(Intent(this@MainActivity,Stress::class.java))}
+                    mainImage.setImageResource(topicimageList[4])
+                    mainImage.setOnClickListener {startActivity(Intent(this@MainActivity, Stress::class.java))
+                    }
+
+
+                }
+
+
+
+
+
+//                if(position==2) {
+//                    title.text = Title[2]
+//                    title.setOnClickListener { startActivity(Intent(this@MainActivity,Treatment::class.java)) }
+//                    mainImage.setImageResource(topicimageList[2])
+//                    mainImage.setOnClickListener { startActivity(Intent(this@MainActivity,Stress::class.java)) }
+//
+//                }
+//
+
+
+             //   mainImage.setImageResource(topicimageList[position])
 
                 nameTitle.text=imageTitle[position]
                 container.setBackgroundColor(Color.parseColor(Colour.getColor()))
                 description.text=descTitle[position]
-                title.text=Title[position]
+           //     title.text=Title[position]
+
+
+
 
 
             }
@@ -74,7 +138,7 @@ class MainActivity : AppCompatActivity() {
         }
         )
 
-        imageSlider.setSlideAnimation(AnimationTypes.ZOOM_OUT)
+        imageSlider.setSlideAnimation(AnimationTypes.ROTATE_UP)
 
 
 
@@ -85,6 +149,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onItemSelected(position: Int) {
                 if (position==1){
+
                     val intent=Intent(this@MainActivity,Stress::class.java)
                     startActivity(intent)
 
