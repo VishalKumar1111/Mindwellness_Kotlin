@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Mind Wellness.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>21F2D31E7F230CFF0AE0D3AA6FA6A676B9CC1F68</string>
+				<key>dateExpires</key>
+				<string>15/10/23</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>21F2D31E7F230CFF0AE0D3AA6FA6A676B9CC1F68</string>
+						<key>dateExpires</key>
+						<string>15/10/23</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>ABGaugeViewKit.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>2C8DUS7BNG</string>
+						<key>name</key>
+						<string>Edutainment Ventures LLC</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.0.1</string>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>1</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>21F2D31E7F230CFF0AE0D3AA6FA6A676B9CC1F68</string>
+						<key>dateExpires</key>
+						<string>15/10/23</string>
+						<key>type</key>
+						<string>Apple Development</string>
+					</dict>
+					<key>name</key>
+					<string>CircularCarousel.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>2C8DUS7BNG</string>
+						<key>name</key>
+						<string>Edutainment Ventures LLC</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.0.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>2C8DUS7BNG.com.ev.cc.main</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>2C8DUS7BNG</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>MindWellness.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>30d6a56d-57d6-43a6-a74a-5113f72ee3a9</string>
+				<key>dateExpires</key>
+				<string>18/10/23</string>
+				<key>name</key>
+				<string>CC Main Dev Provisioning Profile</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>2C8DUS7BNG</string>
+				<key>name</key>
+				<string>Edutainment Ventures LLC</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

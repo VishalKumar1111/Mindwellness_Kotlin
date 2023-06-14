@@ -13,10 +13,25 @@
         android:theme="@style/Theme.Mindwellness"
         tools:targetApi="31" >
         <activity
+            android:name=".YogaFolder.Yoga"
+            android:exported="false" />
+        <activity
+            android:name=".MentalHealth.MentalHealth"
+            android:exported="false" />
+        <activity
+            android:name=".MeditationFolder.Meditation"
+            android:exported="false" />
+        <activity
+            android:name=".HowThisAppHelpYou.Help"
+            android:exported="false" />
+        <activity
+            android:name=".ConnectToDoctor.Doctor"
+            android:exported="false" />
+        <activity
             android:name=".Treatment"
             android:exported="false" />
         <activity
-            android:name=".Stress"
+            android:name=".StressFolder.Stress"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
