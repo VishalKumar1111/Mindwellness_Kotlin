@@ -8,5 +8,7 @@ class Meditation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_meditation)
+
+        this.title = "Meditation"
     }
 }
