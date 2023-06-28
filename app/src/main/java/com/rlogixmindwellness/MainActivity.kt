@@ -150,12 +150,7 @@ class MainActivity : AppCompatActivity() {
                     description.text = descTitle[3]
                     mainImage.setImageResource(topicimageList[3])
                     mainImage.setOnClickListener {
-                        startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                        startActivity(Intent(this@MainActivity, Stress::class.java))
                     }
                     nameTitle.text = imageTitle[3]
                 }
@@ -167,20 +162,11 @@ class MainActivity : AppCompatActivity() {
                     description.text = descTitle[4]
                     description.setOnClickListener {
                         startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                            Intent(this@MainActivity, Stress::class.java))
                     }
                     mainImage.setImageResource(topicimageList[4])
                     mainImage.setOnClickListener {
-                        startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                        startActivity(Intent(this@MainActivity, Stress::class.java))
                     }
                     nameTitle.text = imageTitle[4]
                 }
@@ -193,35 +179,21 @@ class MainActivity : AppCompatActivity() {
                     description.text = descTitle[5]
                     description.setOnClickListener {
                         startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                            Intent(this@MainActivity, Stress::class.java))
                     }
 
                     nameTitle.setOnClickListener {
                         startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                            Intent(this@MainActivity, Stress::class.java))
                     }
                     mainImage.setImageResource(topicimageList[5])
                     mainImage.setOnClickListener {
                         startActivity(
-                            Intent(
-                                this@MainActivity,
-                                Stress::class.java
-                            )
-                        )
+                            Intent(this@MainActivity, Stress::class.java))
                     }
                     nameTitle.text = imageTitle[5]
 
                 }
-
-
                 //   mainImage.setImageResource(topicimageList[position])
 //                nameTitle.text=imageTitle[position]
                 container.setBackgroundColor(Color.parseColor(Colour.getColor()))
@@ -254,6 +226,10 @@ class MainActivity : AppCompatActivity() {
                             (Intent(this@MainActivity, Stress::class.java))
                         )
                     }
+                }
+
+                if (position==0){
+                    startActivity(Intent(this@MainActivity,Treatment::class.java))
                 }
 
 

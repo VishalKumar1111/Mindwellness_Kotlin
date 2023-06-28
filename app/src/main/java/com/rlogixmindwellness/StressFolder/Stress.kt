@@ -10,7 +10,8 @@ import com.rlogixmindwellness.R
 class Stress : AppCompatActivity(){
     private var score=0
     private var questionNo = 0
-    private var questions= listOf(
+    private var toscore=0
+    private var questions= arrayOf(
         "What are the two official languages for Android development? ",
         "How do you define a function in Kotlin? ",
         "What is a variable used for? ",
@@ -28,6 +29,8 @@ class Stress : AppCompatActivity(){
         val button =findViewById<TextView>(R.id.option1)
         val button2=findViewById<TextView>(R.id.option_2)
         val button3=findViewById<TextView>(R.id.option3)
+
+
 
 
         button.setOnClickListener {
@@ -50,15 +53,20 @@ class Stress : AppCompatActivity(){
             1->{
                 updateQuestion()
                 score+=10
-            } 2->{
+                Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show()
+            }
+            2->{
             updateQuestion()
             score+=15
-        } 3->{
+            Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show() }
+            3->{
             updateQuestion()
             score+=20
+            Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show()
         }
+
         }
-        val toscore=score
+        toscore=score
 
     }
 
@@ -74,14 +82,15 @@ class Stress : AppCompatActivity(){
         button3.text = optnc[questionNo]
         button.text = optnA[questionNo]
 
-        if (questionNo==3){
+        if (questionNo==4){
             val intent= Intent(this,StressGauge::class.java)
                 .putExtra("Score",score)
             startActivity(intent)
             Toast.makeText(this,"$score",Toast.LENGTH_SHORT).show()
 
-
-        }
+       }
     }
+
+
 
 }
