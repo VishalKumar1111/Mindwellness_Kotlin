@@ -1,117 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#51DF1919"
-    android:id="@+id/constaint_lay">
+    tools:context=".YogaFolder.Yoga"
+    android:id="@+id/relative_lay"
+    android:background="#5E00B0FF"
+    >
 
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/image_slider"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/zero"
         android:layout_width="match_parent"
-        android:layout_height="131dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="16dp"
-        app:iss_auto_cycle="true"
-        app:iss_delay="1000"
-        app:iss_period="1000"
-        app:iss_text_align="CENTER"
-        app:layout_constraintBottom_toTopOf="@+id/name_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="UnknownId">
-
-    </com.denzcoskun.imageslider.ImageSlider>
-
-    <TextView
-        android:id="@+id/name_title"
-        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15dp"
-        android:background="#56E12B2B"
-        android:gravity="center"
-        android:text="South africa"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <TextView
+            android:id="@+id/name_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#1E651FFF"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:text="MindWellness"
+            android:textColor="#3D5AFE"
+            android:textSize="35sp"
+            android:textStyle="italic|bold" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="50dp"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/zero"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/first"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cropToPadding="true"
+            android:scaleType="fitXY"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/first"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="50dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#56E12B2B"
+            android:gravity="center"
+            android:text="South africa"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"/>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/image_slider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="200dp"
+        android:layout_below="@+id/second"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/third">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:cardCornerRadius="20dp">
-            <TextView
-                android:id="@+id/name_desciption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="South africa"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="italic|bold"
-                tools:layout_editor_absoluteX="20dp"
-                tools:layout_editor_absoluteY="390dp" />
-        </androidx.cardview.widget.CardView>
-        </LinearLayout>
+            android:layout_height="wrap_content">
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="30dp">
+
+                <TextView
+                    android:id="@+id/name_desciption"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="italic|bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/main_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="260dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="50dp"
+        android:layout_below="@+id/third"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true">
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_delay="3000"
+            app:iss_period="3000"
+            app:iss_text_align="CENTER"
+            />
+    </androidx.cardview.widget.CardView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/next"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/next"/>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="265dp"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="73dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="13dp"
-        android:background="#56E12B2B"
-        android:gravity="center"
-        android:text="South africa"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_image" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

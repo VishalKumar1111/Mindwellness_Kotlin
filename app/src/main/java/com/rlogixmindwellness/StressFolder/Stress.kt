@@ -2,95 +2,99 @@ package com.rlogixmindwellness.StressFolder
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rlogixmindwellness.R
 
 class Stress : AppCompatActivity(){
-    private var score=0
-    private var questionNo = 0
-    private var toscore=0
-    private var questions= arrayOf(
-        "What are the two official languages for Android development? ",
-        "How do you define a function in Kotlin? ",
-        "What is a variable used for? ",
-        "What does SDK stand for in Android SDK? "
-    )
-    private var optnA= listOf("A)Kotlin and Java","A)void" ,"A)To contain data","A)Software Development Kit")
-    private var optnB= listOf("B)Java and Python","B)var","B) To insert a random value","B) Software Development Kotlin")
-    private var optnc= listOf("C) Kotlin and Python","C) function","C) Don't know","C) Something Don't Know")
+    private lateinit var questionTextView: TextView
+    private lateinit var option1Button: Button
+    private lateinit var option2Button: Button
+    private lateinit var option3Button: Button
+    private lateinit var option4Button: Button
 
+    private var currentQuestionIndex = 0
+    private var score = 0
+
+    private val questions = listOf(
+        Question("What is the capital of France?", listOf("Paris", "London", "Rome", "Berlin"), 0),
+        Question("Which planet is known as the Red Planet?", listOf("Mars", "Venus", "Jupiter", "Saturn"), 0),
+        Question("What is the largest ocean on Earth?", listOf("Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"), 0),
+        Question("What is the chemical symbol for gold?", listOf("Au", "Ag", "Fe", "Cu"), 0),
+        Question("Who painted the Mona Lisa?", listOf("Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"), 0)
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stress)
 
-        val button =findViewById<TextView>(R.id.option1)
-        val button2=findViewById<TextView>(R.id.option_2)
-        val button3=findViewById<TextView>(R.id.option3)
+        val actionbar=supportActionBar
+        actionbar?.setHomeButtonEnabled(true)
 
 
+        setTitle("Calculate Your Stress")
 
 
-        button.setOnClickListener {
-            showToast(1)
-        }
+        questionTextView = findViewById(R.id.questionTextView)
+        option1Button = findViewById(R.id.option1Button)
+        option2Button = findViewById(R.id.option2Button)
+        option3Button = findViewById(R.id.option3Button)
+        option4Button = findViewById(R.id.option4Button)
 
-        button2.setOnClickListener {
-            showToast(2)
-        }
+        displayQuestion()
 
-        button3.setOnClickListener {
-            showToast(3)
-        }
+        option1Button.setOnClickListener { checkAnswer(0) }
+        option2Button.setOnClickListener { checkAnswer(1) }
+        option3Button.setOnClickListener { checkAnswer(2) }
+        option4Button.setOnClickListener { checkAnswer(3) }
+    }
+
+    private fun displayQuestion() {
+        val currentQuestion = questions[currentQuestionIndex]
+        questionTextView.text = currentQuestion.question
+        option1Button.text = currentQuestion.options[0]
+        option2Button.text = currentQuestion.options[1]
+        option3Button.text = currentQuestion.options[2]
+        option4Button.text = currentQuestion.options[3]
 
     }
 
 
-    private fun showToast(answer: Int) {
-        when(answer){
-            1->{
-                updateQuestion()
-                score+=10
-                Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show()
-            }
-            2->{
-            updateQuestion()
-            score+=15
-            Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show() }
-            3->{
-            updateQuestion()
+    private fun checkAnswer(selectedOptionIndex: Int) {
+        val currentQuestion = questions[currentQuestionIndex]
+
+        if(selectedOptionIndex==0){
+            score+=5
+        }
+        if(selectedOptionIndex==1){
+            score+=10
+        }
+        if(selectedOptionIndex==2){
+            score+=25
+        }
+        if(selectedOptionIndex==3){
             score+=20
-            Toast.makeText(this,"score : $score",Toast.LENGTH_SHORT).show()
         }
 
+
+        currentQuestionIndex++
+        if (currentQuestionIndex < questions.size) {
+            displayQuestion()
+        } else {
+            showFinalScore()
         }
-        toscore=score
 
     }
 
-    private fun updateQuestion() {
-        val textView:TextView =findViewById(R.id.textview)
-        val button:TextView=findViewById(R.id.option1)
-        val button2:TextView=findViewById(R.id.option_2)
-        val button3:TextView=findViewById(R.id.option3)
-
-        questionNo += 1
-        textView.text = questions[questionNo]
-        button2.text = optnB[questionNo]
-        button3.text = optnc[questionNo]
-        button.text = optnA[questionNo]
-
-        if (questionNo==4){
-            val intent= Intent(this,StressGauge::class.java)
-                .putExtra("Score",score)
-            startActivity(intent)
-            Toast.makeText(this,"$score",Toast.LENGTH_SHORT).show()
-
-       }
+    private fun showFinalScore() {
+        val intent=Intent(this@Stress,StressGauge::class.java)
+            .putExtra("Score",score)
+        startActivity(intent)
+        Toast.makeText(this, "Final Score: $score", Toast.LENGTH_LONG).show()
+        // You can perform additional actions here, such as restarting the quiz.
     }
-
-
-
 }
+
+data class Question(val question: String, val options: List<String>, val correctAnswerIndex: Int)

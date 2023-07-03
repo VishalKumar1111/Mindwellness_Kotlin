@@ -2,30 +2,32 @@ package com.rlogixmindwellness
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.AnimationTypes
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.rlogixmindwellness.HowThisAppHelpYou.Help
+import com.rlogixmindwellness.MentalHealth.MentalHealth
 import com.rlogixmindwellness.StressFolder.Stress
-import java.text.FieldPosition
+import com.rlogixmindwellness.YogaFolder.Yoga
 
 class MainActivity : AppCompatActivity() {
 
     private   val imageTitle = mutableListOf(
-        "How This App Can Help You",
-        "Calculate Your Stress",
-        "Yoga & Benifits",
-        "Mental Health problem",
-        "Meditation",
-        "Concern To Doctor"
+        "MindWellness",
+        "MindWellness",
+        "MindWellness",
+        "MindWellness",
+        "MindWellness",
+        "MindWellness"
     )
     private val Title = mutableListOf(
         "How This App Can Help You",
@@ -58,19 +60,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val mainImage: ImageView = findViewById(R.id.main_image)
-        val container = findViewById<ConstraintLayout>(R.id.constaint_lay)
+        val container = findViewById<RelativeLayout>(R.id.relative_lay)
         val imageSlider = findViewById<ImageSlider>(R.id.image_slider)
         val nameTitle = findViewById<TextView>(R.id.name_title)
         val description = findViewById<TextView>(R.id.name_desciption)
         val title = findViewById<TextView>(R.id.title)
+        val float=findViewById<FloatingActionButton>(R.id.next)
 
         title.text = "How this App Can Help You"
         title.setOnClickListener { startActivity(Intent(this@MainActivity, Stress::class.java)) }
         description.text =
             "Benefits Of Yoga \n 1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young\n"
         mainImage.setImageResource(R.drawable.helpapp)
-        nameTitle.text = "How this App Can Help You"
+        nameTitle.text = "MindWellness"
 
 
         val imageList = ArrayList<SlideModel>()
@@ -88,22 +92,20 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
         imageSlider.setItemChangeListener(object : ItemChangeListener {
             override fun onItemChanged(position: Int) {
 
                 if (position == 0) {
                     title.text = Title[0]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Stress::class.java))
+                        startActivity(Intent(this@MainActivity,Help::class.java))
                     }
                     description.text = descTitle[0]
                     mainImage.setImageResource(topicimageList[0])
                     mainImage.setOnClickListener {
                         startActivity(
                             Intent(
-                                this@MainActivity,
-                                Treatment::class.java
+                                this@MainActivity, Help::class.java
                             )
                         )
                     }
@@ -120,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                     description.text = descTitle[1]
                     mainImage.setImageResource(topicimageList[1])
                     mainImage.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                        startActivity(Intent(this@MainActivity, Stress::class.java))
                     }
                     nameTitle.text = imageTitle[1]
                 }
@@ -128,7 +130,7 @@ class MainActivity : AppCompatActivity() {
                 if (position == 2) {
                     title.text = Title[2]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                        startActivity(Intent(this@MainActivity, Yoga::class.java))
                     }
                     description.text = descTitle[2]
                     mainImage.setImageResource(topicimageList[2])
@@ -136,7 +138,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(
                             Intent(
                                 this@MainActivity,
-                                Stress::class.java
+                                Yoga::class.java
                             )
                         )
                     }
@@ -145,19 +147,19 @@ class MainActivity : AppCompatActivity() {
                 if (position == 3) {
                     title.text = Title[3]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                        startActivity(Intent(this@MainActivity, MentalHealth::class.java))
                     }
                     description.text = descTitle[3]
                     mainImage.setImageResource(topicimageList[3])
                     mainImage.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Stress::class.java))
+                        startActivity(Intent(this@MainActivity, MentalHealth::class.java))
                     }
                     nameTitle.text = imageTitle[3]
                 }
                 if (position == 4) {
                     title.text = Title[4]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Treatment::class.java))
+                        startActivity(Intent(this@MainActivity,Treatment::class.java))
                     }
                     description.text = descTitle[4]
                     description.setOnClickListener {
@@ -171,7 +173,7 @@ class MainActivity : AppCompatActivity() {
                     nameTitle.text = imageTitle[4]
                 }
 
-                if (position == 5) {
+                if (position == 5){
                     title.text = Title[5]
                     title.setOnClickListener {
                         startActivity(Intent(this@MainActivity, Treatment::class.java))
@@ -196,7 +198,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 //   mainImage.setImageResource(topicimageList[position])
 //                nameTitle.text=imageTitle[position]
-                container.setBackgroundColor(Color.parseColor(Colour.getColor()))
+               // container.setBackgroundColor(Color.parseColor(Colour.getColor()))
                 //  description.text=descTitle[position]
                 //     title.text=Title[position]
 
@@ -230,6 +232,9 @@ class MainActivity : AppCompatActivity() {
 
                 if (position==0){
                     startActivity(Intent(this@MainActivity,Treatment::class.java))
+                }
+                if (position==3){
+                    startActivity(Intent(this@MainActivity,Yoga::class.java))
                 }
 
 
