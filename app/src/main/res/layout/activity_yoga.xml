@@ -1,12 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".YogaFolder.Yoga"
-    android:id="@+id/relative_lay"
-    android:background="#5E00B0FF">
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/seven"
+        android:scaleType="fitXY"
 
-</RelativeLayout>
+        />
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Popular"
+            android:layout_margin="3dp"
+            android:layout_gravity="start"
+            android:textStyle="bold|italic"
+            android:textColor="#673AB7"
+            android:id="@+id/popular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/popular"
+            android:layout_margin="3dp"
+            android:text="See All"
+            android:layout_alignParentRight="true"
+            android:textColor="#673AB7"
+            android:textStyle="bold|italic" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:id="@+id/rvView"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Popular"
+            android:layout_margin="3dp"
+            android:layout_gravity="start"
+            android:textStyle="bold|italic"
+            android:textColor="#673AB7"
+            android:id="@+id/belowpopular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/belowpopular"
+            android:layout_margin="3dp"
+            android:text="See All"
+            android:layout_alignParentRight="true"
+            android:textColor="#673AB7"
+            android:textStyle="bold|italic" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:id="@+id/rvbelow"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        />
+</LinearLayout>
+</ScrollView>

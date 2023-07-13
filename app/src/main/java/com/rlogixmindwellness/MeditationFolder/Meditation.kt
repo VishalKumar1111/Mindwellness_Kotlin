@@ -10,5 +10,8 @@ class Meditation : AppCompatActivity() {
         setContentView(R.layout.activity_meditation)
 
         this.title = "Meditation"
+
+
+
     }
 }

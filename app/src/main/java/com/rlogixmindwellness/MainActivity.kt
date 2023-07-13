@@ -38,13 +38,13 @@ class MainActivity : AppCompatActivity() {
         "Concern To Doctor"
     )
     private val descTitle = arrayListOf(
+        "1- Know Your Stress Level.\n 2- Manage Your Stress.\n  3- Possible Treatment You Can Seek.\n 4- Help You De-Stress With Yoga. \n 5- Know About Mental Health Problem. \n 6- Connect To An Expert. \n 7-  Health Tips. \n",
+        "Your Stress Result Will Display Here",
         "Benefits Of Yoga \n 1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young",
         " 1- Anxiety disorders.\n 2- Behavioural and emotional disorders in children.\n3- Bipolar affective disorder.\n4- Depression\n5- Addiction\n6- Psychosis",
-        "- Gaining a new perspective on stressful situations.\n 2- Building skills to manage your stress.  \n  3- Increasing self-awareness. \n  4- Focusing on the present. \n 5- Reducing negative emotions",
+        " 1-Gaining a new perspective on stressful situations.\n 2- Building skills to manage your stress.  \n  3- Increasing self-awareness. \n  4- Focusing on the present. \n 5- Reducing negative emotions",
         "Counsellors work with clients experiencing a wide range of emotional and psychological difficulties to help them bring about effective change and/or enhance their wellbeing. Clients could have issues such as depression, anxiety, stress, loss and relationship difficulties that are affecting their ability to manage life.",
-        "Calculate YOur Stress",
-        "Health",
-        "Concern To Doctor"
+
     )
     private var topicimageList = mutableListOf(
         R.drawable.helpapp,
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         title.text = "How this App Can Help You"
         title.setOnClickListener { startActivity(Intent(this@MainActivity, Stress::class.java)) }
         description.text =
-            "Benefits Of Yoga \n 1- Relief from depression and anxiety.\n2- Reduce the effects of PTSD and similar conditions\n 3- Boost concentration, focus, and memory \n  4- Improve your mood \n 5- Keep your brain young\n"
+            "1- Know Your Stress Level.\n 2- Manage Your Stress.\n  3- Possible Treatment You Can Seek.\n 4- Help You De-Stress With Yoga. \n 5- Know About Mental Health Problem. \n 6- Connect To An Expert. \n 7-  Health Tips. \n"
         mainImage.setImageResource(R.drawable.helpapp)
         nameTitle.text = "MindWellness"
 
@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
                 if (position == 2) {
                     title.text = Title[2]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Yoga::class.java))
+                        startActivity(Intent(this@MainActivity,Yoga::class.java))
                     }
                     description.text = descTitle[2]
                     mainImage.setImageResource(topicimageList[2])
@@ -234,6 +234,9 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this@MainActivity,Treatment::class.java))
                 }
                 if (position==3){
+                    startActivity(Intent(this@MainActivity,Yoga::class.java))
+                }
+                if (position==2){
                     startActivity(Intent(this@MainActivity,Yoga::class.java))
                 }
 
