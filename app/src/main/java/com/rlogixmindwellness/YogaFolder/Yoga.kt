@@ -1,10 +1,14 @@
 package com.rlogixmindwellness.YogaFolder
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rlogixmindwellness.R
+import com.rlogixmindwellness.StressFolder.Stress
+import com.rlogixmindwellness.StressFolder.StressGauge
 
 class Yoga : AppCompatActivity() {
     private lateinit var yogaArray:ArrayList<RvItem>
@@ -33,6 +37,29 @@ class Yoga : AppCompatActivity() {
         yogaAdapter=YogaAdapter(yogaArray)
         rvView.adapter=yogaAdapter
 
+        yogaAdapter.setOnItemClickListener(object :YogaAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@Yoga,"Clicked on the $position",Toast.LENGTH_SHORT).show()
+
+                val intent=Intent(this@Yoga, VideoYoga::class.java)
+                    .putExtra("Position",position)
+                startActivity(intent)
+
+//                when(position){
+//                    0-> {
+//                       // startActivity(Intent(this@Yoga, VideoYoga::class.java))
+//                        val intent=Intent(this@Yoga, VideoYoga::class.java)
+//                            .putExtra("Position",position)
+//                        startActivity(intent)
+//                    }
+//
+//
+//
+//                }
+            }
+
+        })
+
 
 
         rvbelow.layoutManager=LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
@@ -43,8 +70,15 @@ class Yoga : AppCompatActivity() {
         belowArray.add(RvItem(R.drawable.seven,"Next"))
         belowArray.add(RvItem(R.drawable.seventeen,"Hello"))
 
+
+
         belowAdapter=YogaAdapter(belowArray)
         rvbelow.adapter=belowAdapter
+        belowAdapter.setOnItemClickListener(object :YogaAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@Yoga,"Clicked on the $position",Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
 

@@ -10,17 +10,32 @@ import com.rlogixmindwellness.R
 
 class YogaAdapter(private var desc:ArrayList<RvItem>):RecyclerView.Adapter<YogaAdapter.ViewHolder>() {
 
+    private lateinit var mlistener : OnItemClickListener
+    interface  OnItemClickListener{
+        fun onItemClick(position:Int)
+    }
+
+    fun setOnItemClickListener(listener :OnItemClickListener){
+        mlistener=listener
+    }
 
 
-    class ViewHolder(itemview:View):RecyclerView.ViewHolder(itemview) {
+    class ViewHolder(itemview:View, listener :OnItemClickListener):RecyclerView.ViewHolder(itemview) {
         var descImage=itemview.findViewById<ImageView>(R.id.item_imageView)
         var desctext=itemview.findViewById<TextView>(R.id.item_textview)
+
+        init{
+            itemview.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+        }
+
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.yoga_items,parent,false)
-        return ViewHolder(view)
+        return ViewHolder(view,mlistener)
     }
 
     override fun getItemCount(): Int {

@@ -15,6 +15,7 @@ import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.rlogixmindwellness.HowThisAppHelpYou.Help
+import com.rlogixmindwellness.MeditationFolder.Meditation
 import com.rlogixmindwellness.MentalHealth.MentalHealth
 import com.rlogixmindwellness.StressFolder.Stress
 import com.rlogixmindwellness.YogaFolder.Yoga
@@ -238,6 +239,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 if (position==2){
                     startActivity(Intent(this@MainActivity,Yoga::class.java))
+                }
+                if (position == 4 ){
+                    startActivity(Intent(this@MainActivity,Meditation::class.java))
                 }
 
 
