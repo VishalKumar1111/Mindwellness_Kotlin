@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.rlogixmindwellness.ConnectToDoctor.Doctor
 import com.rlogixmindwellness.HowThisAppHelpYou.Help
 import com.rlogixmindwellness.MeditationFolder.Meditation
 import com.rlogixmindwellness.MentalHealth.MentalHealth
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         val nameTitle = findViewById<TextView>(R.id.name_title)
         val description = findViewById<TextView>(R.id.name_desciption)
         val title = findViewById<TextView>(R.id.title)
-        val float=findViewById<FloatingActionButton>(R.id.next)
+       // val float=findViewById<FloatingActionButton>(R.id.next)
 
         title.text = "How this App Can Help You"
         title.setOnClickListener { startActivity(Intent(this@MainActivity, Stress::class.java)) }
@@ -182,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                     description.text = descTitle[5]
                     description.setOnClickListener {
                         startActivity(
-                            Intent(this@MainActivity, Stress::class.java))
+                            Intent(this@MainActivity, Doctor::class.java))
                     }
 
                     nameTitle.setOnClickListener {
@@ -192,7 +193,7 @@ class MainActivity : AppCompatActivity() {
                     mainImage.setImageResource(topicimageList[5])
                     mainImage.setOnClickListener {
                         startActivity(
-                            Intent(this@MainActivity, Stress::class.java))
+                            Intent(this@MainActivity, Doctor::class.java))
                     }
                     nameTitle.text = imageTitle[5]
 
