@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.Mindwellness" parent="Base.Theme.Mindwellness" />
+<!--    <style name="AppTheme.NoActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
+
 </resources>
