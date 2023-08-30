@@ -21,6 +21,7 @@ import com.denzcoskun.imageslider.interfaces.ItemChangeListener
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.navigation.NavigationView
+import com.rlogixmindwellness.BodyMAssIndex.BMI
 import com.rlogixmindwellness.ConnectToDoctor.Doctor
 import com.rlogixmindwellness.HowThisAppHelpYou.Help
 import com.rlogixmindwellness.MeditationFolder.Meditation
@@ -172,16 +173,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (position == 4) {
                     title.text = Title[4]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity,Treatment::class.java))
+                        startActivity(Intent(this@MainActivity,BMI::class.java))
                     }
                     description.text = descTitle[4]
                     description.setOnClickListener {
                         startActivity(
-                            Intent(this@MainActivity, Stress::class.java))
+                            Intent(this@MainActivity, BMI::class.java))
                     }
                     mainImage.setImageResource(topicimageList[4])
                     mainImage.setOnClickListener {
-                        startActivity(Intent(this@MainActivity, Stress::class.java))
+                        startActivity(Intent(this@MainActivity, BMI::class.java))
                     }
                     nameTitle.text = imageTitle[4]
                 }

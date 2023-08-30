@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Mindwellness"
         tools:targetApi="31">
         <activity
+            android:name=".BodyMAssIndex.BMI"
+            android:exported="false" />
+        <activity
             android:name=".YogaFolder.VideoYoga"
             android:exported="false" />
         <activity
