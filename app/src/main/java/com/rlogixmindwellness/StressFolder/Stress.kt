@@ -1,11 +1,14 @@
 package com.rlogixmindwellness.StressFolder
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.rlogixmindwellness.MainActivity
 import com.rlogixmindwellness.R
 
 class Stress : AppCompatActivity(){
@@ -14,35 +17,39 @@ class Stress : AppCompatActivity(){
     private lateinit var option2Button: Button
     private lateinit var option3Button: Button
     private lateinit var option4Button: Button
+    private lateinit var imgBack:ImageView
 
     private var currentQuestionIndex = 0
     private var score = 0
 
     private val questions = listOf(
-        Question("What is the capital of France?", listOf("Paris", "London", "Rome", "Berlin"), 0),
-        Question("Which planet is known as the Red Planet?", listOf("Mars", "Venus", "Jupiter", "Saturn"), 0),
-        Question("What is the largest ocean on Earth?", listOf("Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"), 0),
-        Question("What is the chemical symbol for gold?", listOf("Au", "Ag", "Fe", "Cu"), 0),
-        Question("Who painted the Mona Lisa?", listOf("Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"), 0)
+        Question("Little interest or pleasure in doing things?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Feeling down, depressed, or hopeless?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Trouble falling or staying asleep, or sleeping too much?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Feeling tired or having little energy?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Poor appetite or overeating?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Feeling bad about yourself - or that you are a failure or have let yourself or your family down?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Trouble concentrating on things, such as reading the newspaper or watching television?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Moving or speaking so slowly that other people could have noticed?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Thoughts that you would be better off dead, or of hurting yourself in some way?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0)
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stress)
 
-        val actionbar=supportActionBar
-        actionbar?.setHomeButtonEnabled(true)
-
-
         setTitle("Calculate Your Stress")
-
+        supportActionBar?.hide()
 
         questionTextView = findViewById(R.id.questionTextView)
         option1Button = findViewById(R.id.option1Button)
         option2Button = findViewById(R.id.option2Button)
         option3Button = findViewById(R.id.option3Button)
         option4Button = findViewById(R.id.option4Button)
-
+        imgBack=findViewById(R.id.imgBack)
+        imgBack.setOnClickListener {
+            this.startActivity(Intent(this@Stress, MainActivity::class.java))
+        }
         displayQuestion()
 
         option1Button.setOnClickListener { checkAnswer(0) }
@@ -96,5 +103,6 @@ class Stress : AppCompatActivity(){
         // You can perform additional actions here, such as restarting the quiz.
     }
 }
+
 
 data class Question(val question: String, val options: List<String>, val correctAnswerIndex: Int)

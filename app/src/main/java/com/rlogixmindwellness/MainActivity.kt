@@ -24,9 +24,9 @@ import com.google.android.material.navigation.NavigationView
 import com.rlogixmindwellness.BodyMAssIndex.BMI
 import com.rlogixmindwellness.ConnectToDoctor.Doctor
 import com.rlogixmindwellness.HowThisAppHelpYou.Help
-import com.rlogixmindwellness.MeditationFolder.Meditation
 import com.rlogixmindwellness.MentalHealth.MentalHealth
 import com.rlogixmindwellness.StressFolder.Stress
+import com.rlogixmindwellness.MeditationFolder.Meditation
 import com.rlogixmindwellness.YogaFolder.Yoga
 
 
@@ -74,6 +74,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         val mainImage: ImageView = findViewById(R.id.main_image)
         val container = findViewById<RelativeLayout>(R.id.relative_lay)
@@ -144,7 +146,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if (position == 2) {
                     title.text = Title[2]
                     title.setOnClickListener {
-                        startActivity(Intent(this@MainActivity,Yoga::class.java))
+                        startActivity(Intent(this@MainActivity,Meditation::class.java))
                     }
                     description.text = descTitle[2]
                     mainImage.setImageResource(topicimageList[2])
@@ -152,7 +154,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         startActivity(
                             Intent(
                                 this@MainActivity,
-                                Yoga::class.java
+                                Meditation::class.java
                             )
                         )
                     }
@@ -248,7 +250,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     startActivity(Intent(this@MainActivity,Treatment::class.java))
                 }
                 if (position==3){
-                    startActivity(Intent(this@MainActivity,Yoga::class.java))
+                    startActivity(Intent(this@MainActivity,MentalHealth::class.java))
                 }
                 if (position==2){
                     startActivity(Intent(this@MainActivity,Yoga::class.java))

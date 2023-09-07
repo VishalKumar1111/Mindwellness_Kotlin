@@ -1,48 +1,120 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A2C3A2"
     android:padding="16dp"
     >
 
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/next"
+        android:backgroundTint="@color/white"
+        android:rotationY="170"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/questionTextView"
+        android:id="@+id/txt_calulate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Let's Calculate Your Stress"
         android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="60dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_constraintBottom_toTopOf="@+id/questionTextView"
+        app:layout_constraintEnd_toEndOf="@+id/txt_calulate"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/txt_calulate"
+        app:layout_constraintTop_toBottomOf="@+id/txt_calulate" />
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="160dp"
+        android:gravity="center"
         android:text="Question"
-        android:layout_marginBottom="32dp" />
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/option1Button"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar" />
 
     <Button
         android:id="@+id/option1Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Option 1"
-        android:layout_below="@id/questionTextView"
-        android:layout_marginBottom="16dp" />
+        app:backgroundTint="#F4F3F3"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/option2Button"
+        app:layout_constraintEnd_toEndOf="@+id/questionTextView"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/questionTextView"
+        app:strokeColor="@color/white" />
 
     <Button
         android:id="@+id/option2Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Option 2"
-        android:layout_below="@id/option1Button"
-        android:layout_marginBottom="16dp" />
+        app:backgroundTint="#F4F3F3"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/option3Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/option1Button"
+        app:strokeColor="@color/white" />
 
     <Button
         android:id="@+id/option3Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Option 3"
-        android:layout_below="@id/option2Button"
-        android:layout_marginBottom="16dp" />
+        app:backgroundTint="#F4F3F3"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/option4Button"
+        app:layout_constraintEnd_toEndOf="@+id/option2Button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/option2Button"
+        app:strokeColor="@color/white" />
 
     <Button
         android:id="@+id/option4Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
         android:text="Option 4"
-        android:layout_below="@id/option3Button"
-        android:layout_marginBottom="16dp" />
+        app:backgroundTint="#F4F3F3"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/option3Button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/option3Button"
+        app:strokeColor="@color/white" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

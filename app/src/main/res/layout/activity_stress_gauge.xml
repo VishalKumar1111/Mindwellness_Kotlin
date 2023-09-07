@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#A2C3A2">
 
     <com.ekn.gruzer.gaugelibrary.HalfGauge
         android:id="@+id/halfGauge"
@@ -52,11 +53,11 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="35sp"
+                android:textSize="30sp"
                 android:gravity="center"
                 android:textStyle="bold|italic"
 
-                android:text="Need Help"
+                android:text="Connect To Doctor"
 
                 />
         </androidx.cardview.widget.CardView>

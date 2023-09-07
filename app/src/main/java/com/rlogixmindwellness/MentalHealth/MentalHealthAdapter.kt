@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.rlogixmindwellness.R
-import com.rlogixmindwellness.YogaFolder.YogaAdapter
 
 class MentalHealthAdapter(private val arrMental : ArrayList<MenRvItem>):RecyclerView.Adapter<MentalHealthAdapter.ViewHolder>() {
     private lateinit var mlistener : MentalHealthAdapter.OnItemClickListener

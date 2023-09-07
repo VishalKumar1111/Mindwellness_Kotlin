@@ -1,4 +1,4 @@
-package com.rlogixmindwellness.YogaFolder
+package com.rlogixmindwellness.MeditationFolder
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.widget.MediaController
 import android.widget.VideoView
 import com.rlogixmindwellness.R
 
-class VideoYoga : AppCompatActivity() {
+class VideoMeditation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_yoga)

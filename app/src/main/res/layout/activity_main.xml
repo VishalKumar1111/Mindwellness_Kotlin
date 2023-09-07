@@ -8,8 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#5E00B0FF"
-    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+    android:background="#A2C3A2"
     >
         <include
             layout="@layout/content_main"
@@ -24,15 +23,15 @@
             android:fitsSystemWindows="true"
             app:menu="@menu/nav_menu"/>
 
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:context=".YogaFolder.Yoga"
+        tools:context=".MeditationFolder.Meditation"
         android:id="@+id/relative_lay">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/zero"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -45,13 +44,12 @@
             android:id="@+id/name_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#1E651FFF"
-            android:fontFamily="@font/lily_script_one"
             android:gravity="center"
             android:text="MindWellness"
-            android:textColor="#3D5AFE"
+            android:background="#A2C3A2"
+            android:textColor="@color/black"
             android:textSize="35sp"
-            android:textStyle="italic|bold" />
+             />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

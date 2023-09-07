@@ -17,18 +17,20 @@ class MentalRvAdapter(private var arrVideo:ArrayList<RvVideoItem>):RecyclerView.
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-    val view = LayoutInflater.from(parent.context).inflate(R.layout.video_mental_health,parent,false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.video_mental_health,parent,false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
     return  arrVideo.size
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentitem = arrVideo[position]
         holder.txtVideo.text = currentitem.txtVideo
         holder.video.setImageResource(currentitem.imgVideo)
+
 
     }
 

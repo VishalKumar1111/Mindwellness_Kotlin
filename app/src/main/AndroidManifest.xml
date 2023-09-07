@@ -18,10 +18,10 @@
             android:name=".BodyMAssIndex.BMI"
             android:exported="false" />
         <activity
-            android:name=".YogaFolder.VideoYoga"
+            android:name=".MeditationFolder.VideoMeditation"
             android:exported="false" />
         <activity
-            android:name=".YogaFolder.Yoga"
+            android:name=".MeditationFolder.Meditation"
             android:exported="false" />
         <activity
             android:name=".StressFolder.StressGauge"
@@ -31,7 +31,7 @@
             android:name=".MentalHealth.MentalHealth"
             android:exported="false" />
         <activity
-            android:name=".MeditationFolder.Meditation"
+            android:name=".YogaFolder.Yoga"
             android:exported="false" />
         <activity
             android:name=".HowThisAppHelpYou.Help"
@@ -49,7 +49,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/Theme.Mindwellness.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
