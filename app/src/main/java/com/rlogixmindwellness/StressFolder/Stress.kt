@@ -31,8 +31,9 @@ class Stress : AppCompatActivity(){
         Question("Feeling bad about yourself - or that you are a failure or have let yourself or your family down?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
         Question("Trouble concentrating on things, such as reading the newspaper or watching television?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
         Question("Moving or speaking so slowly that other people could have noticed?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
-        Question("Thoughts that you would be better off dead, or of hurting yourself in some way?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0)
-    )
+        Question("Thoughts that you would be better off dead, or of hurting yourself in some way?", listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0),
+        Question("Having Problem in Breathing ?" ,listOf("Not At All" , "Once in a while" , "More Than Half Days" , "Nearly Every Day"), 0)
+        )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,16 +74,16 @@ class Stress : AppCompatActivity(){
         val currentQuestion = questions[currentQuestionIndex]
 
         if(selectedOptionIndex==0){
-            score+=5
+            score+=2
         }
         if(selectedOptionIndex==1){
-            score+=10
+            score+=5
         }
         if(selectedOptionIndex==2){
-            score+=25
+            score+=7
         }
         if(selectedOptionIndex==3){
-            score+=20
+            score+=10
         }
 
 

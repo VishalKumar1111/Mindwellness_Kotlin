@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".YogaFolder.Yoga"
-    android:background="#A2C3A2">
+    android:background="@drawable/background">
 
 
         <include

@@ -8,7 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#A2C3A2"
+    android:background="@drawable/background"
     >
         <include
             layout="@layout/content_main"
@@ -28,7 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:context=".MeditationFolder.Meditation"
-        android:id="@+id/relative_lay">
+        android:id="@+id/relative_lay"
+        android:background="@drawable/background">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/zero"
@@ -38,6 +39,7 @@
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         app:cardCornerRadius="10dp"
+
         app:cardPreventCornerOverlap="false">
 
         <TextView
@@ -46,7 +48,6 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="MindWellness"
-            android:background="#A2C3A2"
             android:textColor="@color/black"
             android:textSize="35sp"
              />
@@ -60,6 +61,7 @@
         android:layout_below="@+id/zero"
         android:layout_centerHorizontal="true"
         android:id="@+id/first"
+        app:cardBackgroundColor="@android:color/transparent"
         android:fitsSystemWindows="true">
 
         <ImageView

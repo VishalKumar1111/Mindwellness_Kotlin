@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MentalHealth.MentalHealth"
-    android:background="#A2C3A2">
+    android:background="@drawable/background">
 
 
 
