@@ -17,7 +17,7 @@
         android:id="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#5E00B0FF"
+        android:background="@color/white"
         app:popupTheme="@style/Theme.Design.NoActionBar"
         >
 
